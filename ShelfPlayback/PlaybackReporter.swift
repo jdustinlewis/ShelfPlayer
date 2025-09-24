@@ -187,7 +187,7 @@ private extension PlaybackReporter {
         }
         
         do {
-            try await PersistenceManager.shared.progress.update(itemID, currentTime: currentTime, duration: duration, notifyServer: false)
+            try await PersistenceManager.shared.progress.update(itemID, currentTime: currentTime, duration: duration, notifyServer: force)
         } catch {
             logger.warning("Cannot update progress: \(error).")
         }
